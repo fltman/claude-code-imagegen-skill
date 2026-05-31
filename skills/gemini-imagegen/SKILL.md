@@ -1,11 +1,11 @@
 ---
 name: gemini-imagegen
-description: Generate AI images using Google Gemini via OpenRouter. Use when the user wants to create images, generate pictures, make AI art, edit images, or transform photos. Supports both text-to-image and image-to-image generation.
+description: Generate AI images using Google Gemini via Google AI Studio. Use when the user wants to create images, generate pictures, make AI art, edit images, or transform photos. Supports both text-to-image and image-to-image generation.
 ---
 
 # Gemini Image Generation
 
-Generate high-quality AI images using Google's Gemini model via OpenRouter API.
+Generate high-quality AI images using Google's Gemini model via Google AI Studio.
 
 ## Capabilities
 
@@ -18,15 +18,15 @@ Before using this skill, ensure:
 
 1. **Python packages** are installed:
    ```bash
-   pip install openai python-dotenv
+   pip install google-genai python-dotenv
    ```
 
 2. **API key** is set:
    ```bash
-   export OPENROUTER_API_KEY="your-openrouter-api-key"
+   export GOOGLE_API_KEY="your-google-api-key"
    ```
    
-   Get your key at: https://openrouter.ai/keys
+   Get your key at: https://aistudio.google.com/apikey
 
 ## Usage
 
@@ -53,7 +53,7 @@ python scripts/generate_image.py --input photo.jpg --prompt "Transform into a wa
 | `--prompt` | `-p` | Yes | Text description of the desired image |
 | `--output` | `-o` | No | Output file path (default: `generated_image.png`) |
 | `--input` | `-i` | No | Input image for image-to-image mode |
-| `--model` | `-m` | No | Model ID (default: `google/gemini-3-pro-image-preview`) |
+| `--model` | `-m` | No | _(removed; model is fixed to `gemini-2.0-flash-preview-image-generation`)_ |
 
 ## Prompt Tips
 
@@ -98,11 +98,11 @@ luxurious and elegant mood
 
 ## Troubleshooting
 
-**"OPENROUTER_API_KEY not set"**
-- Set the environment variable: `export OPENROUTER_API_KEY="your-key"`
+**"GOOGLE_API_KEY not set"**
+- Set the environment variable: `export GOOGLE_API_KEY="your-key"`
 
-**"openai package not installed"**
-- Install it: `pip install openai`
+**"google-genai package not installed"**
+- Install it: `pip install google-genai`
 
 **"No images found in response"**
 - The model may have returned text instead of an image
